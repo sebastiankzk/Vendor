@@ -13,7 +13,7 @@ def get_vendor(user_id: int):
     return vendor_profile
 
 # All Vendor Profile
-@router.get("/vendor_profile/get/all")
+@router.get("/vendor_profile/get/all/")
 def get_all_vendors():
     vendor_profile = vendor_controller.get_all_vendors()
     if vendor_profile is None:

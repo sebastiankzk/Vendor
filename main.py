@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-# from app.routes.vendor_router import router as vendor_router
+from app.routes.vendor_router import router as vendor_router
 from mangum import Mangum
 
 app = FastAPI()
@@ -13,7 +13,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# app.include_router(vendor_router)
+app.include_router(vendor_router)
 
 @app.get("/")
 async def root():
